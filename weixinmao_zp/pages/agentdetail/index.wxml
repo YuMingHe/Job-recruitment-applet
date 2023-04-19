@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="header">
+        <view class="pic">
+            <image src="{{data.avatarUrl}}"></image>
+            <view>{{data.name}}</view>
+        </view>
+    </view>
+    <view class="list">
+        <view bindtap="doCall" class="item" data-tel="{{data.tel}}">
+            <text class="fa fa-phone  fa-fw"></text>  {{data.tel}}</view>
+        <view class="item">
+            <text class="fa fa-weixin  fa-fw"></text> {{data.weixin}}</view>
+        <view class="item">
+            <text class="fa fa-envelope-o fa-fw"></text>  {{data.email}}</view>
+    </view>
+</view>
+<view class="weixinmao-float">
+    <view class="weixinmao-foot">
+        <view bindtap="doCall" class="footer" data-tel="{{data.tel}}">
+            <image src="../../resource/img/tel.png"></image>联系经纪人</view>
+        <view bindtap="Changeagent" class="footer">
+            <image src="../../resource/images/lbs.png"></image>设为我的经纪人</view>
+    </view>
+</view>

@@ -1,0 +1,139 @@
+<form reportSubmit bindsubmit="savepubinfo">
+    <view class="container">
+        <view class="main">
+            <view class="title">
+          招聘职位添加
+        </view>
+            <view class="list">
+                <view class="item">
+                    <view class="name">工作职位</view>
+                    <view class="selectitem">
+                        <input name="jobtitle" placeholder="请输入意向职位" type="text" value="{{jobinfo.jobtitle?jobinfo.jobtitle:''}}"></input>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">工作类型</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindJobcateChange" range="{{jobcate}}" rangeKey="name" value="{{Index}}">
+                            <view class="picker">  
+
+                            {{jobcate[jobcateindex].name?jobcate[jobcateindex].name:'请选择期望行业'}}
+                        </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name"> 薪资待遇</view>
+                    <view class="selectitem">
+                        <input name="money" placeholder="请输入薪资待遇" type="text" value="{{jobinfo.money?jobinfo.money:''}}"></input>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name"> 招聘人数</view>
+                    <view class="selectitem">
+                        <input name="num" placeholder="请输入招聘人数" type="text" value="{{jobinfo.num?jobinfo.num:''}}"></input>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">学历要求</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindEducationChange" range="{{education}}" rangeKey="" value="{{Index}}">
+                            <view class="picker">  
+
+                  {{education[educationindex]?education[educationindex]:'请选择学历要求'}}
+              </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">工作经验</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindExpressChange" range="{{express}}" value="{{Index}}">
+                            <view class="picker">  
+
+                  {{express[expressindex]?express[expressindex]:'请选择工作经验'}}
+              </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">工作性质</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindWorktypeChange" range="{{worktype}}" value="{{Index}}">
+                            <view class="picker">  
+
+                            {{worktype[worktypeindex]?worktype[worktypeindex]:'请选择工作性质'}}
+                        </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name"> 年龄要求</view>
+                    <view class="selectitem">
+                        <input name="age" placeholder="请输入年龄要求" type="text" value="{{jobinfo.age?jobinfo.age:''}}"></input>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">性 别</view>
+                    <view class="selectitem">
+                        <radio-group bindchange="radioChange" class="radio-group">
+                            <label class="radio">
+                                <radio checked="{{jobinfo.sex==1?'checked':''}}" value="1"></radio>男
+  </label>
+                            <label class="radio">
+                                <radio checked="{{jobinfo.sex==2?'checked':''}}" value="2"></radio>女
+  </label>
+                            <label class="radio">
+                                <radio checked="{{jobinfo.sex==0?'checked':''}}" value="0"></radio>不限
+  </label>
+                        </radio-group>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="main">
+            <view class="title">
+          特色服务
+        </view>
+            <view class="checklist">
+                <checkbox-group bindchange="checkboxChange">
+                    <view class="checkitem" wx:for="{{speciallist}}">
+                        <checkbox checked="{{item.checked?true:false}}" name="special" value="{{item.name}}"></checkbox>{{item.name}}</view>
+                </checkbox-group>
+            </view>
+        </view>
+        <view class="main">
+            <view class="title">
+          职位描述
+        </view>
+            <view class="list">
+                <view class="item">
+                    <view class="selectitem" style="width:100%;">
+                        <textarea maxlength="-1" name="content" placeholder="请填写职位描述"></textarea>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="main">
+            <view class="title">付费信息</view>
+            <view class="list">
+                <view class="item">
+                    <view class="name">支付选项</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindToplistChange" range="{{payjoblist}}" rangeKey="title" value="{{Index}}">
+                            <view class="picker">  
+
+                                          {{payjoblist[toplistidindex].title?payjoblist[toplistidindex].title:'选择职位上线天数'}}
+                                      </view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weixinmao-float">
+        <view class="weixinmao-foot">
+            <button class="footer" formType="submit">保存职位</button>
+        </view>
+    </view>
+</form>

@@ -1,0 +1,127 @@
+<import src="../../resource/wxParse/wxParse.wxml"></import>
+<view class="container" hidden="{{isshow}}">
+    <view class="main">
+        <view class="title">
+            <view>
+                <text>{{data.title}} </text>
+            </view>
+            <view class="price">
+                <view>{{data.jobtype}}{{data.money}}</view>
+            </view>
+        </view>
+        <view class="address">
+            <view> {{data.areaname}}</view>
+            <view class="money">
+                <view class="item" wx:for="{{data.special}}">{{item}} </view>
+            </view>
+        </view>
+        <view class="jobintro">
+            <view>
+                <text class="fa fa-intersex fa-lg"></text>
+                <block wx:if="{{data.sex==1}}"> 男</block>
+                <block wx:elif="{{data.sex==2}}">女</block>
+                <block wx:else>男女不限</block>
+            </view>
+            <view>
+                <text class="fa fa-mortar-board fa-lg"></text> {{data.education}}</view>
+            <view>
+                <text class="fa fa-diamond fa-lg"></text>{{data.express}}</view>
+            <view>
+                <text class="fa fa-cubes fa-lg"></text>{{data.jobtype}}</view>
+            <view>
+                <text class="fa fa-child fa-lg"></text>{{data.age}}</view>
+            <view>
+                <text class="fa fa-users fa-lg"></text>招聘{{data.num}}人</view>
+        </view>
+    </view>
+    <block wx:if="{{ispay==1||data.dmoney==0}}">
+        <view class="company">
+            <view bindtap="toCompanyDetail" class="companyinfo" data-id="{{data.companyid}}">
+                <image src="{{data.thumb}}"></image>
+                <view class="companyname">
+                    <view>{{data.companyname}}</view>
+                    <view>{{data.companyworker}}| {{data.companytype}}</view>
+                    <view>{{data.companycate}}</view>
+                </view>
+            </view>
+            <view bindtap="goMap" class="companyaddress">
+                <text class="fa fa-map-marker fa-lg" style="color:#ef4f2d;"></text> {{data.address}}
+</view>
+        </view>
+        <view class="contentlist">
+            <view class="title">
+                <view></view>
+                <view>联系方式</view>
+            </view>
+            <view class="listitem">
+                <view class="items">
+                    <text class="fa fa-user fa-lg" style="color:#bfbfbf"></text>
+                    <text>{{data.mastername}}</text>
+                </view>
+                <view class="items">
+                    <text class="fa fa-phone fa-lg" style="color:#bfbfbf;"></text>
+                    <text>{{data.tel}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="contentlist">
+        <view class="title">
+            <view></view>
+            <view>职位描述</view>
+        </view>
+        <view class="intro">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+        </view>
+    </view>
+</view>
+<view class="weixinmao-float" wx:if="{{data.dmoney<=0}}">
+    <view class="weixinmao-foot">
+        <view class="footer">
+            <button openType="share">
+                <text class="fa fa-share-square-o fa-lg"></text>
+            </button>
+        </view>
+        <view bindtap="doCall" class="footer" data-tel="{{data.tel}}">
+            <text class="fa fa-phone fa-lg"></text>电话</view>
+        <view bindtap="doSavejob" class="{{savestatus==1?'red':'black'}}" data-id="{{data.companyid}}">
+            <text class="fa fa-heart-o fa-lg"></text> 收藏</view>
+        <view class="footer" data-id="{{data.companyid}}">
+            <form bindsubmit="doSendjob" reportSubmit="true">
+                <button class="footerbutton" formType="submit" hidden="{{!isuser}}" style="background:#fe552e; font-size:.8rem; height:100rpx;">投递简历</button>
+            </form>
+            <button bindgetuserinfo="bindGetUserInfo" class="footerbutton" hidden="{{isuser}}" openType="getUserInfo" style="background:#fe552e; font-size:.8rem; height:100rpx;">投递简历</button>
+        </view>
+    </view>
+</view>
+<block wx:else>
+    <view class="weixinmao-float" wx:if="{{ispay==1}}">
+        <view class="weixinmao-foot">
+            <view class="footer">
+                <button openType="share">
+                    <text class="fa fa-share-square-o fa-lg"></text>
+                </button>
+            </view>
+            <view bindtap="doCall" class="footer" data-tel="{{data.tel}}">
+                <text class="fa fa-phone fa-lg"></text>电话</view>
+            <view bindtap="doSavejob" class="{{savestatus==1?'red':'black'}}" data-id="{{data.companyid}}">
+                <text class="fa fa-heart-o fa-lg"></text> 收藏</view>
+            <view class="footer" data-id="{{data.companyid}}">
+                <button bindgetuserinfo="bindGetUserInfo" class="footerbutton" hidden="{{isuser}}" openType="getUserInfo" style="background:#fe552e; font-size:.8rem; height:100rpx;">投递简历</button>
+                <form bindsubmit="doSendjob" reportSubmit="true">
+                    <button bindgetuserinfo="bindGetUserInfo" class="footerbutton" formType="submit" hidden="{{!isuser}}" openType="getUserInfo" style="background:#fe552e; font-size:.8rem; height:100rpx;">投递简历</button>
+                </form>
+            </view>
+        </view>
+    </view>
+    <view bindtap="pay" class="weixinmao-float_pay" hidden="{{isshow}}" wx:else>
+        <view class="weixinmao-foot_pay">
+            <view class="footer_pay">打赏￥{{data.dmoney}}查看联系方式</view>
+        </view>
+    </view>
+</block>
+<view class="u-tap-btn">
+    <navigator class="u-go-home" openType="switchTab" url="/weixinmao_zp/pages/index/index">
+        <view class="iconfont fa fa-home"></view>
+    </navigator>
+</view>

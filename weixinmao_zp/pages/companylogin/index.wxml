@@ -1,0 +1,84 @@
+<view class="container">
+    <view class="header">
+        <view class="pic">
+            <image src="{{companyinfo.thumb}}"></image>
+            <view>{{companyinfo.companyname}}</view>
+        </view>
+    </view>
+    <view class="mymoney">
+        <view class="item">
+            <view>{{companyinfo.pubjobnum}}/{{companyinfo.jobnum}}个</view>
+            <view>发布职位</view>
+        </view>
+        <view class="line"></view>
+        <view class="item">
+            <view>{{companyinfo.notenum}}条</view>
+            <view>查看简历</view>
+        </view>
+        <view class="line"></view>
+        <view bindtap="toCompanyrole" class="item">
+            <view>{{companyinfo.rolename}}</view>
+            <view>升级会员</view>
+        </view>
+    </view>
+    <view class="list">
+        <view bindtap="toEditcompany" class="item">
+            <text class="fa fa-pencil-square-o  fa-lg"></text>企业信息编辑</view>
+        <view bindtap="toMyPayMoney" class="item">
+            <text class="fa fa-newspaper-o   fa-lg"></text>购买查看简历次数 <text style="color:red;font-weight:600;">(剩余:{{companyinfo.notenum}}条)</text>
+        </view>
+        <view bindtap="toMyjoblist" class="item">
+            <text class="fa fa-newspaper-o   fa-lg"></text>职位管理</view>
+        <view bindtap="toMypartjoblist" class="item">
+            <text class="fa fa-newspaper-o   fa-lg"></text>兼职管理</view>
+        <view bindtap="toMynote" class="item">
+            <text class="fa fa-users   fa-lg"></text>求职简历</view>
+        <view bindtap="binduserinfo" class="item">
+            <text class="fa fa-heart-o  fa-lg"></text>绑定主管</view>
+        <view bindtap="toShopmsg" class="item">
+            <text class="fa fa-newspaper-o   fa-lg"></text>接收消息</view>
+        <view bindtap="loginout" class="item">
+            <text class="fa fa-sign-out  fa-lg"></text>退出登录</view>
+    </view>
+</view>
+<view class="weixinmao-msg" hidden="{{showmsg}}">
+    <view class="weixinmao-content">
+        <view class="title">
+            <view></view>
+            <view>绑定手机号</view>
+            <view bindtap="closemsg">关闭</view>
+        </view>
+        <form bindsubmit="saveuserinfo">
+            <view class="content">
+                <view class="item">
+                    <input class="inputlist" name="name" placeholder="请输入您的姓名" type="text" value="{{user.name}}"></input>
+                </view>
+                <view class="item">
+                    <input class="inputlist" name="tel" placeholder="请输入您的手机号" type="text" value="{{user.tel}}"></input>
+                </view>
+                <view class="item tops">
+                    <button class="bindtel" formType="submit">立即绑定</button>
+                </view>
+            </view>
+        </form>
+    </view>
+</view>
+<view class="weixinmao-msg-userinfo" hidden="{{isuser}}">
+    <view class="weixinmao-content-userinfo">
+        <view class="userinfo-title">
+          您还没有授权呢
+        </view>
+        <view class="userinfo-content">
+          点击授权按钮，期待与您愉快的沟通~
+        </view>
+        <view class="userinfo-button">
+            <button bindtap="cancelUser"></button>
+            <button bindgetuserinfo="bindGetUserInfo" openType="getUserInfo">去授权</button>
+        </view>
+    </view>
+</view>
+<view class="u-tap-btn">
+    <navigator class="u-go-home" openType="switchTab" url="/weixinmao_zp/pages/index/index">
+        <view class="iconfont fa fa-home"></view>
+    </navigator>
+</view>

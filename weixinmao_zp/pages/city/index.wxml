@@ -1,0 +1,23 @@
+<scroll-view class="city_list" scrollIntoView="{{toView}}" scrollY="true" style="height: {{scrollHeight}}px">
+    <view class="cities">
+        <view class="current" id="AA">热门城市</view>
+        <view class="city_type">
+            <text bindtap="selectcity" class="city_tag" data-id="{{item.id}}" data-name="{{item.name}}" wx:for="{{hotlist}}">{{item.name}}</text>
+        </view>
+    </view>
+    <view class="cities" wx:for="{{firstnamelist}}">
+        <view class="current" id="{{item.firstname}}">{{item.firstname}}</view>
+        <view class="city_type">
+            <text bindtap="selectcity" class="city_tag" data-id="{{itemName.id}}" data-name="{{itemName.name}}" wx:for="{{item.firstlist}}" wx:for-item="itemName">{{itemName.name}}</text>
+        </view>
+    </view>
+</scroll-view>
+<view bindtap="choiceWordindex" class="aside_letter">
+    <text data-wordindex="AA">#</text>
+    <text data-wordindex="AA">热</text>
+    <text data-wordindex="A">A</text>
+    <text data-wordindex="B">B</text>
+    <text data-wordindex="C">C</text>
+    <text data-wordindex="D">D</text>
+    <text data-wordindex="E">E</text>
+</view>

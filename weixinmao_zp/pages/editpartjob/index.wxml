@@ -1,0 +1,167 @@
+<form reportSubmit bindsubmit="savepubinfo">
+    <view class="container">
+        <view class="main">
+            <view class="title">
+          招聘职位编辑
+        </view>
+            <view class="list">
+                <view class="item">
+                    <view class="name">兼职名称</view>
+                    <view class="selectitem">
+                        <input name="jobtitle" placeholder="请输入兼职名称" type="text" value="{{jobinfo.jobtitle?jobinfo.jobtitle:''}}"></input>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">兼职类型</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindJobcateChange" range="{{jobcate}}" rangeKey="name" value="{{Index}}">
+                            <view class="picker">  
+
+                            {{jobcate[jobcateindex].name?jobcate[jobcateindex].name:'请选择兼职类型'}}
+                        </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name"> 兼职日薪</view>
+                    <view class="selectitem">
+                        <input name="money" placeholder="请输入兼职日薪" type="text" value="{{jobinfo.money?jobinfo.money:''}}"></input>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name"> 招聘人数</view>
+                    <view class="selectitem">
+                        <input name="num" placeholder="请输入招聘人数" type="text" value="{{jobinfo.num?jobinfo.num:''}}"></input>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">学历要求</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindEducationChange" range="{{education}}" rangeKey="" value="{{Index}}">
+                            <view class="picker">  
+
+                  {{education[educationindex]?education[educationindex]:'请选择学历要求'}}
+              </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">工作经验</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindExpressChange" range="{{express}}" value="{{Index}}">
+                            <view class="picker">  
+
+                  {{express[expressindex]?express[expressindex]:'请选择工作经验'}}
+              </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">结算方式</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindWorktypeChange" range="{{worktype}}" value="{{Index}}">
+                            <view class="picker">  
+
+                            {{worktype[worktypeindex]?worktype[worktypeindex]:'请选择结算方式'}}
+                        </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name"> 年龄要求</view>
+                    <view class="selectitem">
+                        <input name="age" placeholder="请输入年龄要求" type="text" value="{{jobinfo.age?jobinfo.age:''}}"></input>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">性 别</view>
+                    <view class="selectitem">
+                        <radio-group bindchange="radioChange" class="radio-group">
+                            <label class="radio">
+                                <radio checked="{{jobinfo.sex==1?'checked':''}}" value="1"></radio>男
+  </label>
+                            <label class="radio">
+                                <radio checked="{{jobinfo.sex==2?'checked':''}}" value="2"></radio>女
+  </label>
+                            <label class="radio">
+                                <radio checked="{{jobinfo.sex==0?'checked':''}}" value="0"></radio>不限
+  </label>
+                        </radio-group>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">兼职日期</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindDateChange" end="" mode="date" start="" style="margin-right:10%;" value="{{date}}">
+                            <view class="picker">  
+    {{dates?dates:'请选择日期'}}
+    </view>
+                        </picker>
+  -
+       <picker bindchange="bindDateChange2" end="" mode="date" start="" style="margin-right:10%;" value="{{date}}">
+                            <view class="picker">  
+     {{dates2?dates2:'请选择日期'}}
+    </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name">兼职时间</view>
+                    <view class="selectitem">
+                        <picker bindchange="bindTimeChange" end="" mode="time" start="" value="{{datetime}}">
+                            <view class="picker">  
+       {{datetime?datetime:'请选择时间'}}
+    </view>
+                        </picker>
+  -
+      <picker bindchange="bindTimeChange2" end="" mode="time" start="" value="{{datetime}}">
+                            <view class="picker">  
+      {{datetime2?datetime2:'请选择时间'}}
+    </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name"> 工作地点</view>
+                    <view class="selectitem">
+                        <input name="workaddress" placeholder="请输入工作地点" type="text" value="{{jobinfo.workaddress?jobinfo.workaddress:''}}"></input>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="name"> 集合地点</view>
+                    <view class="selectitem">
+                        <input name="address" placeholder="请输入集合地点" type="text" value="{{jobinfo.address?jobinfo.address:''}}"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="main">
+            <view class="title">
+             工作福利
+        </view>
+            <view class="checklist">
+                <checkbox-group bindchange="checkboxChange">
+                    <view class="checkitem" wx:for="{{speciallist}}">
+                        <checkbox checked="{{item.checked?true:false}}" name="special" value="{{item.name}}"></checkbox>{{item.name}}</view>
+                </checkbox-group>
+            </view>
+        </view>
+        <view class="main">
+            <view class="title">
+          职位描述
+        </view>
+            <view class="list">
+                <view class="item">
+                    <view class="selectitem" style="width:100%;">
+                        <textarea name="content" placeholder="请填写自我介绍及工作经历" value="{{jobinfo.content}}"></textarea>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weixinmao-float">
+        <view class="weixinmao-foot">
+            <button class="footer" formType="submit">保存职位</button>
+        </view>
+    </view>
+</form>

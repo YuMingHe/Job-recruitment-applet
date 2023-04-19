@@ -1,0 +1,35 @@
+<view class="container">
+    <view class="swiper-container">
+        <swiper autoplay="{{autoplay}}" bindchange="swiperchange" class="swiper_box" duration="{{duration}}" interval="{{interval}}">
+            <swiper-item wx:for="{{banners}}">
+                <image bindtap="tapBanner" class="slide-image" data-id="{{item.id}}" height="562.5rpx" src="{{item.thumb}}" width="750rpx"></image>
+            </swiper-item>
+        </swiper>
+        <view class="dots">
+            <view class="dot{{index==swiperCurrent?' active':''}}" wx:for="{{banners}}" wx:key="unique"></view>
+        </view>
+    </view>
+    <form reportSubmit bindsubmit="bindSave">
+        <view class="form-box">
+            <view class="row-wrap">
+                <view class="label">账 号</view>
+                <view class="label-right">
+                    <input class="input" name="name" placeholder="请输入账号" type="text" value=""></input>
+                </view>
+            </view>
+            <view class="row-wrap">
+                <view class="label">密 码</view>
+                <view class="label-right">
+                    <input class="input" maxlength="20" name="password" placeholder="请输入密码" type="password" value=""></input>
+                </view>
+            </view>
+        </view>
+        <button class="save-btn" formType="submit">立即登录</button>
+        <button bindtap="goregister" class="save-btn">立即注册</button>
+    </form>
+</view>
+<view class="u-tap-btn">
+    <button class="u-go-home2" openType="contact">
+        <view class="iconfont fa fa-comments-o"></view>
+    </button>
+</view>

@@ -1,0 +1,11 @@
+<form reportSubmit bindsubmit="binduser">
+    <view class="container">
+        <view class="intro">
+您尚未通过认证，您可以通过提交认证信息申请认证，认证后将可以使用更多平台功能！
+</view>
+        <view class="register"></view>
+        <view class="btnuser">
+            <button bindgetphonenumber="getPhoneNumber" openType="getPhoneNumber">我要授权并认证</button>
+        </view>
+    </view>
+</form>

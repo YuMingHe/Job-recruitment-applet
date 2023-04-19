@@ -1,0 +1,367 @@
+.container {
+    background-color: #f5f5f5;
+    min-height: 100%;
+}
+
+.container .header {
+    width: 750rpx;
+    height: 350rpx;
+    background: #3274e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .header .pic {
+    width: 380rpx;
+    height: 250rpx;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .header .pic image {
+    width: 140rpx;
+    height: 140rpx;
+    border: 7rpx solid #FFF;
+    border-radius: 140rpx;
+}
+
+.container .header .pic view {
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 380rpx;
+    text-align: center;
+    color: #FFF;
+    font-size: .8rem;
+}
+
+.container .order {
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .order .title {
+    font-size: 1rem;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    background: #FFF;
+    margin-top: 20rpx;
+    padding-left: 20rpx;
+    border-bottom: 1rpx solid #efefef;
+}
+
+.container .order .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 750rpx;
+    background: #FFF;
+    padding-bottom: 20rpx;
+    padding-top: 20rpx;
+}
+
+.container .order .content .item {
+    width: 250rpx;
+    text-align: center;
+    font-size: .8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .order .content .item image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.container .list {
+    width: 750rpx;
+    margin-top: 20rpx;
+    background: #FFF;
+}
+
+.container .list .item {
+    padding-top: 25rpx;
+    padding-bottom: 25rpx;
+    font-size: 1rem;
+    border-bottom: 1rpx solid #efefef;
+    padding-left: 20rpx;
+    color: #747474;
+}
+
+.container .list .item text {
+    margin-right: 15rpx;
+}
+
+.line {
+    height: 80rpx;
+    border-right: 1rpx solid #e5e5e5;
+    margin-top: 20rpx;
+}
+
+.mymoney {
+    width: 750rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #FFF;
+    font-size: .8rem;
+}
+
+.mymoney .item {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.mymoney .item view:nth-child(1) {
+    color: #1aad19;
+}
+
+.weixinmao-msg {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 2001;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.weixinmao-content {
+    width: 600rpx;
+    height: 450rpx;
+    z-index: 4001;
+    background: #FFF;
+    align-self: center;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weixinmao-content .title {
+    border-bottom: 1rpx solid #e5e5e5;
+    width: 100%;
+    text-align: center;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    font-size: .8rem;
+    background: #3274e5;
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.weixinmao-content .title view:nth-child(1) {
+    width: 30%;
+}
+
+.weixinmao-content .title view:nth-child(2) {
+    width: 40%;
+}
+
+.weixinmao-content .title view:nth-child(3) {
+    width: 30%;
+}
+
+.weixinmao-content .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20rpx;
+}
+
+.weixinmao-content .content .item {
+    font-size: .8rem;
+    width: 100%;
+    align-self: center;
+    margin-bottom: 10rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inputlist {
+    border: 1rpx solid #efefef;
+    width: 80%;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 4rpx;
+    align-self: center;
+}
+
+.bindtel {
+    width: 400rpx;
+    background: #3274e5;
+    color: #FFF;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.weixinmao-msg-userinfo {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 2001;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.weixinmao-content-userinfo {
+    width: 550rpx;
+    height: 350rpx;
+    z-index: 4001;
+    background: #FFF;
+    align-self: center;
+    border-radius: 5rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weixinmao-content-userinfo .userinfo-title {
+    align-self: left;
+    margin-left: 40rpx;
+    font-size: 1.2rem;
+    margin-top: 40rpx;
+}
+
+.weixinmao-content-userinfo .userinfo-content {
+    align-self: left;
+    margin-left: 40rpx;
+    font-size: .9rem;
+    margin-top: 20rpx;
+}
+
+.userinfo-button {
+    display: flex;
+    flex-direction: row;
+    width: 400rpx;
+    margin-left: 200rpx;
+    align-items: baseline;
+    padding-bottom: 20rpx;
+}
+
+.userinfo-button button {
+    background: #FFF;
+    font-size: .8rem;
+}
+
+.userinfo-button button:nth-child(2) {
+    color: #d65408;
+}
+
+.weixinmao-msg-usertel {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 2001;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.weixinmao-content-usertel {
+    width: 550rpx;
+    height: 350rpx;
+    z-index: 4001;
+    background: #FFF;
+    align-self: center;
+    border-radius: 5rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weixinmao-content-usertel .usertel-title {
+    align-self: left;
+    margin-left: 40rpx;
+    font-size: 1.2rem;
+    margin-top: 40rpx;
+}
+
+.weixinmao-content-usertel .usertel-content {
+    align-self: left;
+    margin-left: 40rpx;
+    font-size: .9rem;
+    margin-top: 40rpx;
+}
+
+.usertel-button {
+    display: flex;
+    flex-direction: row;
+    width: 400rpx;
+    margin-left: 200rpx;
+}
+
+.usertel-button button {
+    background: #FFF;
+    font-size: .8rem;
+}
+
+.usertel-button button:nth-child(2) {
+    color: #d65408;
+}
+
+button::after {
+    border: none;
+}
+
+.money {
+    color: #FFF;
+    font-size: .7rem;
+    text-align: center;
+}
+
+.u-tap-btn {
+    position: fixed;
+    right: 20rpx;
+    bottom: 150rpx;
+}
+
+.u-go-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 100%;
+    width: 80rpx;
+    height: 80rpx;
+    border: 1px solid #eee;
+    font-size: 20rpx;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 4rpx 8rpx rgba(0,0,0,0.35);
+    z-index: 2;
+    opacity: 0.8;
+    line-height: 80rpx;
+    margin-bottom: 20rpx;
+}
+
+.u-go-home .iconfont {
+    font-size: 1.5rem;
+    color: red;
+    align-self: center;
+}

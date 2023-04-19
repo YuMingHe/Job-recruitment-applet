@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="orderlist" wx:for="{{list}}">
+        <view class="orderid">应聘职位:{{item.jobtitle}}</view>
+        <view class="content">
+            <view class="item">应聘人:{{item.name}}</view>
+            <view class="item">性别:  {{item.sex==1?'男':'女'}} </view>
+            <view class="item">联系电话:{{item.tel}}</view>
+            <view class="item">创建时间:{{item.createtime}}</view>
+            <view class="payitem">
+                <view bindtap="toNote" data-id="{{item.noteid}}" hidden="">查看简历</view>
+                <view bindtap="JobNotice" data-id="{{item.id}}" hidden="" wx:if="{{item.status==0}}">邀请面试</view>
+                <view data-id="{{item.id}}" hidden="" wx:else>已邀请</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="container">
+    <view class="orderlist" wx:for="{{list}}">
+        <view class="orderid">招聘职位:{{item.jobtitle}}</view>
+        <view class="content">
+            <view class="item">招聘人数:{{item.num}}</view>
+            <view class="item">薪资待遇:￥{{item.money}}元/月</view>
+            <view class="item">当前状态:{{item.statusStr}}</view>
+            <view class="item">创建时间:{{item.createtime}}</view>
+            <view class="payitem">
+                <view bindtap="editCompanyjob" data-id="{{item.id}}" hidden="">编辑职位</view>
+                <view bindtap="cancleJob" data-id="{{item.id}}" hidden="" wx:if="{{item.status==0}}">下架职位</view>
+                <view bindtap="upJob" data-id="{{item.id}}" hidden="" wx:else>上架职位</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="weixinmao-float">
+    <view class="weixinmao-foot">
+        <view bindtap="addcompanypartjob" class="footer">添加兼职职位</view>
+    </view>
+</view>

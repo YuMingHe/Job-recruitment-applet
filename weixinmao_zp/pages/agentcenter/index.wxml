@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="type-container">
+        <scroll-view class="type-navbar" scrollX="true">
+            <view class="type-box">
+                <view bindtap="tabClick" class="type-navbar-item {{ordertype==1?'type-item-on':''}}" id="1">
+                    个人会员
+                </view>
+            </view>
+            <view class="type-box">
+                <view bindtap="tabClick" class="type-navbar-item {{ordertype==2?'type-item-on':''}}" id="2">
+                    企业会员
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="orderlist" wx:for="{{list}}">
+        <view class="content">
+            <view class="pic">
+                <image src="{{item.avatarUrl}}"></image>
+            </view>
+            <view class="detail">
+                <view class="item">{{item.name}}</view>
+                <view class="item">
+                    <text class="fa fa-phone  fa-fw"></text>{{item.tel}}</view>
+            </view>
+        </view>
+    </view>
+</view>

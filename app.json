@@ -1,0 +1,85 @@
+{
+  "pages": [
+    "weixinmao_zp/pages/index/index",
+    "weixinmao_zp/pages/bindtel/index",
+    "weixinmao_zp/pages/companyrole/index",
+    "weixinmao_zp/pages/agentlist/index",
+    "weixinmao_zp/pages/companylogin/index",
+    "weixinmao_zp/pages/regmoney/index",
+    "weixinmao_zp/pages/regsub/index",
+    "weixinmao_zp/pages/nearjob/index",
+    "weixinmao_zp/pages/findpartjob/index",
+    "weixinmao_zp/pages/binduser/index",
+    "weixinmao_zp/pages/active/index",
+    "weixinmao_zp/pages/paymoney/index",
+    "weixinmao_zp/pages/companyregister/index",
+    "weixinmao_zp/pages/mynote/index",
+    "weixinmao_zp/pages/findjob/index",
+    "weixinmao_zp/pages/workerdetail/index",
+    "weixinmao_zp/pages/companydetail/index",
+    "weixinmao_zp/pages/jobdetail/index",
+    "weixinmao_zp/pages/newsdetail/index",
+    "weixinmao_zp/pages/picdetail/index",
+    "weixinmao_zp/pages/lethouselist/index",
+    "weixinmao_zp/pages/message/index",
+    "weixinmao_zp/pages/search/index",
+    "weixinmao_zp/pages/newhousedetail/index",
+    "weixinmao_zp/pages/activedetail/index",
+    "weixinmao_zp/pages/user/index",
+    "weixinmao_zp/pages/companyjob/index",
+    "weixinmao_zp/pages/addCompanyjob/index",
+    "weixinmao_zp/pages/editCompanyjob/index",
+    "weixinmao_zp/pages/companynote/index",
+    "weixinmao_zp/pages/mysave/index",
+    "weixinmao_zp/pages/myfind/index",
+    "weixinmao_zp/pages/editcompany/index",
+    "weixinmao_zp/pages/mynotice/index",
+    "weixinmao_zp/pages/editmynote/index",
+    "weixinmao_zp/pages/order/index",
+    "weixinmao_zp/pages/activedetail2/index",
+    "weixinmao_zp/pages/myinvaterecord/index",
+    "weixinmao_zp/pages/shopmsg/index",
+    "weixinmao_zp/pages/addpartjob/index",
+    "weixinmao_zp/pages/companypartjob/index",
+    "weixinmao_zp/pages/editpartjob/index",
+    "weixinmao_zp/pages/partjobdetail/index",
+    "weixinmao_zp/pages/city/index",
+    "weixinmao_zp/pages/regagent/index",
+    "weixinmao_zp/pages/paytopjob/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#3274e5",
+    "backgroundColor": "#3274e5",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#0180CF",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "box-shadow": "0 0 6px 0",
+    "list": [
+      {
+        "pagePath": "weixinmao_zp/pages/index/index",
+        "text": "首页",
+        "iconPath": "weixinmao_zp/resource/images/nav/home-off.png",
+        "selectedIconPath": "weixinmao_zp/resource/images/nav/home-on.png"
+      },
+      {
+        "pagePath": "weixinmao_zp/pages/findjob/index",
+        "text": "找工作",
+        "iconPath": "weixinmao_zp/resource/images/nav/news-off.png",
+        "selectedIconPath": "weixinmao_zp/resource/images/nav/news-on.png"
+      },
+      {
+        "pagePath": "weixinmao_zp/pages/user/index",
+        "text": "会员中心",
+        "iconPath": "weixinmao_zp/resource/images/nav/user-off.png",
+        "selectedIconPath": "weixinmao_zp/resource/images/nav/279.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

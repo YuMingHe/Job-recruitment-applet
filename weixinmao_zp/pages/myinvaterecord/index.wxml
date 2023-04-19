@@ -1,0 +1,15 @@
+<view class="container">
+    <view class="orderlist" wx:for="{{list}}">
+        <view class="orderid">邀请编号:{{item.id}}</view>
+        <view class="content">
+            <view class="item">邀请企业:{{item.companyname}}</view>
+            <view class="item">联系电话:{{item.tel}}</view>
+            <view class="item">负责人:{{item.mastername}}</view>
+            <view class="item">邀请时间:{{item.createtime}}</view>
+            <view class="payitem">
+                <view bindtap="toJob" data-id="{{item.companyid}}" hidden="">查看企业</view>
+                <view bindtap="doCall" data-tel="{{item.tel}}" hidden="">联系主管</view>
+            </view>
+        </view>
+    </view>
+</view>

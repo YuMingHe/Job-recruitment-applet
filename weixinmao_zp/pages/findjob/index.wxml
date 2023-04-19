@@ -1,0 +1,152 @@
+<view class="search">
+    <navigator hoverClass="none" url="../city/index?id=1">
+        <image mode="aspectFit" src="../../resource/images/coord.png"></image>
+        <text>{{city}}</text>
+    </navigator>
+    <view bindtap="toSearch" class="search_box">
+        <icon size="14" type="search"></icon>
+        <text>请输入查询信息</text>
+    </view>
+</view>
+<view class="list_sort">
+    <view bindtap="selectCars" class="sort_list {{isCars?'':'select'}}">
+        <text>区域</text>
+        <image src="{{isCars?'../../resource/images/buttom.png':'../../resource/images/top-red.png'}}"></image>
+    </view>
+    <view bindtap="selectPrice" class="sort_list {{isPrice?'':'select'}}">
+        <text>薪资范围</text>
+        <image src="{{isPrice?'../../resource/images/buttom.png':'../../resource/images/top-red.png'}}"></image>
+    </view>
+    <view bindtap="selectType" class="sort_list {{isType?'':'select'}}">
+        <text>职业类别</text>
+        <image src="{{isType?'../../resource/images/buttom.png':'../../resource/images/top-red.png'}}"></image>
+    </view>
+</view>
+<view class="select_cars" hidden="{{isCars}}">
+    <scroll-view class="bigWrap" scrollTop="{{scrollTop}}" scrollY="true" style="height:600rpx; left: 0; top:0; bottom: 0; right: 0;">
+        <view bindtap="selectcarsitem" class="select_cars_list {{carid==0?'colorred':''}}" data-title="全部" id="0">
+            <text>全部</text>
+            <image src="../../resource/images/dui.png" wx:if="{{carid==0}}"></image>
+        </view>
+        <view bindtap="selectcarsitem" class="select_cars_list {{carid==0?'colorred':''}}" data-title="上海" id="1">
+            <text>上海</text>
+            <image src="../../resource/images/dui.png" wx:if="{{carid==0}}"></image>
+        </view>
+        <view bindtap="selectcarsitem" class="select_cars_list {{carid==0?'colorred':''}}" data-title="北京" id="2">
+            <text>北京</text>
+            <image src="../../resource/images/dui.png" wx:if="{{carid==0}}"></image>
+        </view>
+        <view bindtap="selectcarsitem" class="select_cars_list {{carid==0?'colorred':''}}" data-title="广州" id="3">
+            <text>广州</text>
+            <image src="../../resource/images/dui.png" wx:if="{{carid==0}}"></image>
+        </view>
+        <view bindtap="selectcarsitem" class="select_cars_list {{carid==0?'colorred':''}}" data-title="武汉" id="4">
+            <text>武汉</text>
+            <image src="../../resource/images/dui.png" wx:if="{{carid==0}}"></image>
+        </view>
+        <block wx:for="{{arealist}}" wx:key="index">
+            <view bindtap="selectcarsitem" class="select_cars_list colorred" data-title="{{item.name}}" id="{{item.id}}" wx:if="{{item.id==carid}}">
+                <text>{{item.name}}</text>
+                <image src="../../resource/images/dui.png"></image>
+            </view>
+            <view bindtap="selectcarsitem" class="select_cars_list" data-title="{{item.name}}" id="{{item.id}}" wx:else>
+                <text>{{item.name}}</text>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+<view bindtap="selectCars" class="small_overlay" hidden="{{isCars}}"></view>
+<view class="select_sort" hidden="{{isPrice}}">
+    <view bindtap="selectpriceitem" class="select_cars_list {{priceid==0?'colorred':''}}" data-title="不限" id="0">
+        <text>不限</text>
+        <image src="../../resource/images/dui.png" wx:if="{{priceid==0}}"></image>
+    </view>
+    <view bindtap="selectpriceitem" class="select_cars_list {{priceid==0?'colorred':''}}" data-title="1000-2000" id="1">
+        <text>1000-2000</text>
+        <image src="../../resource/images/dui.png" wx:if="{{priceid==0}}"></image>
+    </view>
+    <view bindtap="selectpriceitem" class="select_cars_list {{priceid==0?'colorred':''}}" data-title="2000-3000" id="2">
+        <text>2000-3000</text>
+        <image src="../../resource/images/dui.png" wx:if="{{priceid==0}}"></image>
+    </view>
+    <view bindtap="selectpriceitem" class="select_cars_list {{priceid==0?'colorred':''}}" data-title="3000-4000" id="3">
+        <text>3000-4000</text>
+        <image src="../../resource/images/dui.png" wx:if="{{priceid==0}}"></image>
+    </view>
+    <view bindtap="selectpriceitem" class="select_cars_list {{priceid==0?'colorred':''}}" data-title="4000-5000" id="4">
+        <text>4000-5000</text>
+        <image src="../../resource/images/dui.png" wx:if="{{priceid==0}}"></image>
+    </view>
+    <block wx:for="{{housepricelist}}" wx:key="index">
+        <view bindtap="selectpriceitem" class="select_cars_list colorred" data-title="{{item.name}}" id="{{item.id}}" wx:if="{{item.id==priceid}}">
+            <text>{{item.name}}</text>
+            <image src="../../resource/images/dui.png"></image>
+        </view>
+        <view bindtap="selectpriceitem" class="select_cars_list" data-title="{{item.name}}" id="{{item.id}}" wx:else>
+            <text>{{item.name}}</text>
+        </view>
+    </block>
+</view>
+<view bindtap="selectPrice" class="small_overlay" hidden="{{isPrice}}"></view>
+<view class="select_sort" hidden="{{isType}}">
+    <scroll-view class="bigWrap" scrollTop="{{scrollTop}}" scrollY="true" style="height:600rpx; left: 0; top:0; bottom: 0; right: 0;">
+        <view bindtap="selecttypeitem" class="select_cars_list {{typeid==0?'colorred':''}}" data-title="不限" id="0">
+            <text>不限</text>
+            <image src="../../resource/images/dui.png" wx:if="{{typeid==0}}"></image>
+        </view>
+        <view bindtap="selecttypeitem" class="select_cars_list {{typeid==0?'colorred':''}}" data-title="互联网" id="1">
+            <text>互联网</text>
+            <image src="../../resource/images/dui.png" wx:if="{{typeid==0}}"></image>
+        </view>
+        <view bindtap="selecttypeitem" class="select_cars_list {{typeid==0?'colorred':''}}" data-title="快消" id="2">
+            <text>快消</text>
+            <image src="../../resource/images/dui.png" wx:if="{{typeid==0}}"></image>
+        </view>
+        <view bindtap="selecttypeitem" class="select_cars_list {{typeid==0?'colorred':''}}" data-title="金融" id="3">
+            <text>金融</text>
+            <image src="../../resource/images/dui.png" wx:if="{{typeid==0}}"></image>
+        </view>
+        <view bindtap="selecttypeitem" class="select_cars_list {{typeid==0?'colorred':''}}" data-title="生物医药" id="4">
+            <text>生物医药</text>
+            <image src="../../resource/images/dui.png" wx:if="{{typeid==0}}"></image>
+        </view>
+        <view bindtap="selecttypeitem" class="select_cars_list {{typeid==0?'colorred':''}}" data-title="其他" id="5">
+            <text>其他</text>
+            <image src="../../resource/images/dui.png" wx:if="{{typeid==0}}"></image>
+        </view>
+        <block wx:for="{{jobcatelist}}" wx:key="index">
+            <view bindtap="selecttypeitem" class="select_cars_list colorred" data-title="{{item.name}}" id="{{item.id}}" wx:if="{{item.id==typeid}}">
+                <text>{{item.name}}</text>
+                <image src="../../resource/images/dui.png"></image>
+            </view>
+            <view bindtap="selecttypeitem" class="select_cars_list" data-title="{{item.name}}" id="{{item.id}}" wx:else>
+                <text>{{item.name}}</text>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+<view class="list_sort1">
+    <view bindlongtap="selectCars1" class="sort_list {{isCars?'':'select'}}">
+        <text>点评商家号产品运营实习生</text>
+        <image src="{{isCars?'../../resource/images/buttom.png':'../../resource/images/top-red.png'}}"></image>
+    </view>
+</view>
+<view class="list_sort1">
+    <view bindlongtap="selectCars1" class="sort_list {{isCars?'':'select'}}">
+        <text>点评商家号产品运营实习生</text>
+        <image src="{{isCars?'../../resource/images/buttom.png':'../../resource/images/top-red.png'}}"></image>
+    </view>
+</view>
+<view class="list_sort1">
+    <view bindlongtap="selectCars1" class="sort_list {{isCars?'':'select'}}">
+        <text>点评商家号产品运营实习生</text>
+        <image src="{{isCars?'../../resource/images/buttom.png':'../../resource/images/top-red.png'}}"></image>
+    </view>
+</view>
+<view class="list_sort1">
+    <view bindlongtap="selectCars1" class="sort_list {{isCars?'':'select'}}">
+        <text>点评商家号产品运营实习生</text>
+        <image src="{{isCars?'../../resource/images/buttom.png':'../../resource/images/top-red.png'}}"></image>
+    </view>
+</view>
+
